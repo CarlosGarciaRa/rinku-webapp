@@ -82,9 +82,7 @@ onBeforeUnmount(() => {
 const onTopBarMenuButton = () => {
   topbarMenuActive.value = !topbarMenuActive.value;
 };
-const onSettingsClick = (event) => {
-  menu.value.toggle(event);
-};
+
 const topbarMenuClasses = computed(() => {
   return {
     'layout-topbar-menu-mobile-active': topbarMenuActive.value
@@ -129,7 +127,7 @@ const isOutsideClicked = (event) => {
             <span>Portafolio</span>
         </router-link> -->
 
-    <button v-if="authStore.isLoggedIn" class="p-link layout-menu-button layout-topbar-button ml-0" @click="onMenuToggle()">
+    <button class="p-link layout-menu-button layout-topbar-button ml-0" @click="onMenuToggle()">
       <i class="pi pi-bars"></i>
     </button>
 
@@ -146,10 +144,10 @@ const isOutsideClicked = (event) => {
         <i class="pi pi-user"></i>
         <span>Profile</span>
       </button> -->
-      <button aria-controls="overlay_menu" @click="onSettingsClick($event)" class="p-link layout-topbar-button">
+      <!-- <button aria-controls="overlay_menu" @click="onSettingsClick($event)" class="p-link layout-topbar-button">
         <i class="pi pi-user"></i>
         <span>Profile</span>
-      </button>
+      </button> -->
       <Menu ref="menu" id="overlay_menu" :model="items" :popup="true">
         <template #end>
           <button @click="logout" class="w-full p-link flex align-items-center p-2 pl-4 text-color hover:surface-200 border-noround">

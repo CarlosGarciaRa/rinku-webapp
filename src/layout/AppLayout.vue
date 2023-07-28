@@ -5,7 +5,6 @@ import AppFooter from './AppFooter.vue';
 import AppSidebar from './AppSidebar.vue';
 // import AppConfig from './AppConfig.vue';
 import { useLayout } from '@/layout/composables/layout';
-import { useAuthStore } from '@/store/authStore';
 
 const { layoutConfig, layoutState, isSidebarActive } = useLayout();
 
@@ -61,14 +60,12 @@ const isOutsideClicked = (event) => {
     topbarEl.contains(event.target)
   );
 };
-
-const authStore = useAuthStore();
 </script>
 
 <template>
   <div class="layout-wrapper" :class="containerClass">
     <app-topbar></app-topbar>
-    <div v-if="authStore.isLoggedIn" class="layout-sidebar">
+    <div class="layout-sidebar">
       <app-sidebar></app-sidebar>
     </div>
     <div class="layout-main-container">

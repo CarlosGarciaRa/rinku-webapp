@@ -9,11 +9,7 @@ import AppMenuItem from './AppMenuItem.vue';
 const model = ref([
   {
     // label: 'UI Components',
-    items: [
-      { label: t('titles.myProfile'), icon: 'pi pi-fw pi-user', to: { name: 'myProfile' } },
-      { label: t('titles.programmingLanguages'), icon: 'pi pi-fw pi-code', to: { name: 'programmingLanguages' } },
-      { label: t('titles.skills'), icon: 'pi pi-fw pi-pencil', to: { name: 'skills' } }
-    ]
+    items: [{ label: t('sidebar.employees'), icon: 'pi pi-fw pi-user', to: { name: 'employees' } }]
   }
 ]);
 </script>
