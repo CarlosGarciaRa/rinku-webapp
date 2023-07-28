@@ -27,42 +27,7 @@
     "verificationEmailExists": "Si el correo existe, se le volverá a enviar la verificación",
     "send": "Enviar"
   },
-  "titles": {
-    "programmingLanguages": "Lenguajes de Programación",
-    "myProfile": "Mi Perfil",
-    "skills": "Habilidades",
-    "projects": "Proyectos"
-  },
-  "programmingLanguages": {
-    "add": "Agregar Lenguaje",
-    "created": "Lenguaje creado",
-    "name": "Nombre del lenguaje",
-    "description": "Descripción del lenguaje"
-  },
-  "skills": {
-    "add": "Agregar habilidad",
-    "created": "Habilidad creada",
-    "name": "Nombre de la habilidad",
-    "description": "Descripción de la habilidad"
-  },
-  "projects": {
-    "add": "Agregar proyecto",
-    "edit": "Editar proyecto",
-    "delete": "Borrar proyecto",
-    "uSureDelete": "¿Estás seguro de que deseas eliminar este proyecto?",
-    "created": "Proyecto creado",
-    "edited": "Proyecto editado",
-    "deleted": "Proyecto eliminado",
-    "name": "Nombre del proyecto",
-    "title": "Título del proyecto",
-    "description": "Descripción del proyecto",
-    "picture": "Imagen del proyecto",
-    "link": "URL del proyecto",
-    "paid": "Remunerado",
-    "wasPaid": "El usuario recibió remuneración por este proyecto",
-    "descriptionLength": "La descripción no puede tener más de {char} caracteres.",
-    "languagesLength": "Agrega al menos {min} lenguaje(s)"
-  },
+
   "myProfile": {
     "edit": "Editar Perfil",
     "edited": "Perfil editado",
@@ -74,9 +39,24 @@
     "title": "Titulo",
     "options": "Opciones"
   },
+  "user": {
+    "role": "Rol",
+    "name": "Nombre",
+    "number": "Numero",
+    "createUser": "Crear usuario",
+    "createdAt": "Creado el",
+    "editUser": "Editar usuario",
+    "employeeNumber": "Numero de empleado",
+    "added": "Empleado Agregado"
+  },
+  "sidebar": {
+    "employees": "Empleados",
+    "deliveries": "Entregas"
+  },
   "roles": {
-    "admin": "Administrador",
-    "user": "Usuario"
+    "driver": "Conductor",
+    "loader": "Cargador",
+    "auxiliares": "Auxiliar"
   },
   "toast": {
     "ok": "Todo bien"

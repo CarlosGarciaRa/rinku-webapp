@@ -1,3 +1,3 @@
-import authRoutes from './auth';
+import employees from './employees';
 
-export const routes = [...authRoutes];
+export const routes = [...employees];
