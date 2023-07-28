@@ -1,0 +1,87 @@
+{
+  "auth": {
+    "welcome": "Bienvenido",
+    "signInToContinue": "Inicie sesión para continuar",
+    "signUpToContinue": "Regístrese para continuar",
+    "fullName": "Nombre completo",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "dob": "Fecha de Nacimiento",
+    "email": "Email",
+    "username": "Nombre de usuario",
+    "usernameError": "Nombre de usuario no debe tener espacios",
+    "password": "Contraseña",
+    "rememberMe": "Recuérdame",
+    "forgotPassword": "¿Olvidaste tu contraseña?",
+    "signIn": "Iniciar sesión",
+    "signUp": "Registrarse",
+    "logout": "Cerrar sesión",
+    "confirmPassword": "Confirmar contraseña",
+    "checkYourEmail": "Para confirmar su cuenta, por favor revise su correo electrónico y haga clic en el enlace de confirmación que le hemos enviado. Si no encuentra el correo electrónico en su bandeja de entrada, por favor revise su carpeta de correo no deseado. \n\nUna vez que haya confirmado su cuenta, podrá acceder a todas las funciones de nuestro sitio web. Si tiene alguna pregunta o problema durante el proceso de confirmación, no dude en ponerse en contacto con nuestro equipo de soporte al cliente.",
+    "successfulRegistration": "¡Enhorabuena! Su registro de usuario ha sido completado exitosamente.",
+    "successfulVerification": "¡Gracias por confirmar su cuenta!",
+    "verificationError": "Token no válido",
+    "emailSent": "Si el correo existe, se le enviará el correo electrónico.",
+    "successfulVerificationText": "Nos complace informarle que su correo electrónico ha sido verificado y su cuenta está activa. Ahora puede iniciar sesión en nuestro sitio web y acceder a todas las funciones disponibles.",
+    "resendVerificationEmail": "Volver a enviar email de verificación",
+    "verificationEmailExists": "Si el correo existe, se le volverá a enviar la verificación",
+    "send": "Enviar"
+  },
+  "titles": {
+    "programmingLanguages": "Lenguajes de Programación",
+    "myProfile": "Mi Perfil",
+    "skills": "Habilidades",
+    "projects": "Proyectos"
+  },
+  "programmingLanguages": {
+    "add": "Agregar Lenguaje",
+    "created": "Lenguaje creado",
+    "name": "Nombre del lenguaje",
+    "description": "Descripción del lenguaje"
+  },
+  "skills": {
+    "add": "Agregar habilidad",
+    "created": "Habilidad creada",
+    "name": "Nombre de la habilidad",
+    "description": "Descripción de la habilidad"
+  },
+  "projects": {
+    "add": "Agregar proyecto",
+    "edit": "Editar proyecto",
+    "delete": "Borrar proyecto",
+    "uSureDelete": "¿Estás seguro de que deseas eliminar este proyecto?",
+    "created": "Proyecto creado",
+    "edited": "Proyecto editado",
+    "deleted": "Proyecto eliminado",
+    "name": "Nombre del proyecto",
+    "title": "Título del proyecto",
+    "description": "Descripción del proyecto",
+    "picture": "Imagen del proyecto",
+    "link": "URL del proyecto",
+    "paid": "Remunerado",
+    "wasPaid": "El usuario recibió remuneración por este proyecto",
+    "descriptionLength": "La descripción no puede tener más de {char} caracteres.",
+    "languagesLength": "Agrega al menos {min} lenguaje(s)"
+  },
+  "myProfile": {
+    "edit": "Editar Perfil",
+    "edited": "Perfil editado",
+    "name": "Nombre",
+    "bio": "Biografía",
+    "bioError": "La biografía no puede tener más de {char} caracteres.",
+    "picture": "Foto de perfil",
+    "resume": "Currículum",
+    "title": "Titulo",
+    "options": "Opciones"
+  },
+  "roles": {
+    "admin": "Administrador",
+    "user": "Usuario"
+  },
+  "toast": {
+    "ok": "Todo bien"
+  },
+  "hello": "Hola",
+  "yes": "Sí",
+  "no": "No"
+}

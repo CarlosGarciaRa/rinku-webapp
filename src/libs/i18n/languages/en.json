@@ -1,0 +1,44 @@
+{
+  "auth": {
+    "welcome": "Welcome",
+    "signInToContinue": "Sign in to continue",
+    "signUpToContinue": "Sign up to continue",
+    "fullName": "Full Name",
+    "firstName": "Frist Name",
+    "lastName": "Last Name",
+    "dob": "Date of birth",
+    "email": "Email",
+    "password": "Password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "signIn": "Sign In",
+    "signUp": "Sign Up",
+    "confirmPassword": "Confirm password",
+    "checkYourEmail": "Check your mailbox (also spam folder) and click the link to finish verifying your account",
+    "successfulRegistration": "Successful registration",
+    "successfulVerification": "Successful verification",
+    "verificationError": "Token no valido",
+    "emailSent": "Email Sent",
+    "successfulVerificationText": "We are pleased to inform you that your email has been verified and your account is active. You can now log in to our website and access all available features.",
+    "resendVerificationEmail": "Resend verification email",
+    "send": "Send"
+  },
+  "toast": {
+    "ok": "Ok"
+  },
+  "titles": {
+    "programmingLanguages": "Programming Languages",
+    "myProfile": "My Profile"
+  },
+  "programmingLanguages": {
+    "add": "Add Language",
+    "name": "Language name",
+    "description": "Language description"
+  },
+  "myProfile": {
+    "edit": "Edit Profile",
+    "name": "Name",
+    "bio": "Bio"
+  },
+  "hello": "Hola"
+}
