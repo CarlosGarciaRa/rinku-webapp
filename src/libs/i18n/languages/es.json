@@ -53,12 +53,13 @@
     "edit": "Editar empleado"
   },
   "delivery": {
-    "number": "Numero",
+    "number": "Numero de entregas",
     "createDelivery": "Crear entrega",
     "createdAt": "Creado el",
     "editDelivery": "Editar entrega",
-    "employeeNumber": "Numero de empleado",
+    "date": "Fecha de entrega",
     "added": "Entrega Agregado",
+    "deleted": "Entrega eliminada",
     "edited": "Entrega editado",
     "edit": "Editar empleado"
   },

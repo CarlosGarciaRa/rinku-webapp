@@ -13,10 +13,10 @@ export const useDeliveryStore = defineStore('deliveries', {
   getters: {},
 
   actions: {
-    createDelivery(user) {
+    createDelivery(delivery) {
       return new Promise((resolve, reject) => {
         api
-          .post('/deliveries', user)
+          .post('/deliveries', delivery)
           .then((response) => {
             resolve(response.data);
           })
@@ -25,10 +25,22 @@ export const useDeliveryStore = defineStore('deliveries', {
           });
       });
     },
-    editDelivery(user) {
+    editDelivery(delivery) {
       return new Promise((resolve, reject) => {
         api
-          .patch(`/deliveries/${user.id}`, user)
+          .patch(`/deliveries/${delivery.id}`, delivery)
+          .then((response) => {
+            resolve(response.data);
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      });
+    },
+    deleteDelivery(deliveryId) {
+      return new Promise((resolve, reject) => {
+        api
+          .delete(`/deliveries/${deliveryId}`)
           .then((response) => {
             resolve(response.data);
           })
