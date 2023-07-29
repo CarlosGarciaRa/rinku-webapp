@@ -57,15 +57,27 @@
     "createDelivery": "Crear entrega",
     "createdAt": "Creado el",
     "editDelivery": "Editar entrega",
-    "date": "Fecha de entrega",
+    "date": "Mes de entrega",
     "added": "Entrega Agregado",
     "deleted": "Entrega eliminada",
     "edited": "Entrega editado",
     "edit": "Editar empleado"
   },
+  "salary": {
+    "fetch": "Constultar salarios",
+    "monthSalary": "Salario Mensual",
+    "deliveriesBonus": "Entregas",
+    "bonusByRole": "Bonos",
+    "subtotalSalary": "Subtotal",
+    "isrRetained": "ISR $",
+    "isrPercentage": "ISR %",
+    "totalSalary": "Salario Total",
+    "vouchers": "Vales"
+  },
   "sidebar": {
     "employees": "Empleados",
-    "deliveries": "Entregas"
+    "deliveries": "Entregas",
+    "salaries": "Salarios"
   },
   "roles": {
     "driver": "Conductor",

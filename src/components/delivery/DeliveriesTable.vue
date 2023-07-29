@@ -58,8 +58,8 @@ const deleteDelivery = (delivery) => {
         <template #body="{ data }"> {{ $t(`roles.${data.user.role}`) }}</template>
       </Column>
       <Column style="width: 15%" field="number" :header="$t('delivery.number')"></Column>
-      <Column style="width: 15%" field="date" :header="$t('user.createdAt')">
-        <template #body="{ data }"> {{ dayjs(data.createdAt).format('YYYY/MM/DD') }}</template>
+      <Column style="width: 15%" field="date" :header="$t('delivery.date')">
+        <template #body="{ data }"> {{ dayjs(data.date).format('YYYY/MM') }}</template>
       </Column>
       <Column style="width: 15%" field="date" :header="$t('user.createdAt')">
         <template #body="{ data }"> {{ dayjs(data.createdAt).format('YYYY/MM/DD') }}</template>

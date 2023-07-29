@@ -11,7 +11,8 @@ const model = ref([
     // label: 'UI Components',
     items: [
       { label: t('sidebar.employees'), icon: 'pi pi-fw pi-user', to: { name: 'employees' } },
-      { label: t('sidebar.deliveries'), icon: 'pi pi-fw pi-user', to: { name: 'deliveries' } }
+      { label: t('sidebar.deliveries'), icon: 'pi pi-fw pi-user', to: { name: 'deliveries' } },
+      { label: t('sidebar.salaries'), icon: 'pi pi-fw pi-user', to: { name: 'salaries' } }
     ]
   }
 ]);
