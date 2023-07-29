@@ -11,7 +11,7 @@ import { useEmployeeStore } from '@/store/employeeStore';
 const props = defineProps({
   delivery: { userId: '', number: '', date: null }
 });
-const deliveryToSend = ref({ userId: '', number: '', date: null });
+const deliveryToSend = ref({ userId: '', number: null, date: null });
 const userNameQuery = ref('');
 
 const rules = computed(() => ({

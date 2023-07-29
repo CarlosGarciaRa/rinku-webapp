@@ -54,6 +54,8 @@
   },
   "delivery": {
     "number": "Numero de entregas",
+    "totalDeliveries": "Numero total de entregas",
+    "grouped": "Agrupado por usuario",
     "createDelivery": "Crear entrega",
     "createdAt": "Creado el",
     "editDelivery": "Editar entrega",

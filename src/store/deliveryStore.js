@@ -61,6 +61,19 @@ export const useDeliveryStore = defineStore('deliveries', {
             reject(err);
           });
       });
+    },
+    fetchDeliveriesGrouped() {
+      return new Promise((resolve, reject) => {
+        api
+          .get('/deliveries/grouped_by_user')
+          .then((response) => {
+            this.deliveries = response.data;
+            resolve(response.data);
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      });
     }
   }
 });

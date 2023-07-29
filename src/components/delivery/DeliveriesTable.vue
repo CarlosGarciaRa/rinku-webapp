@@ -5,6 +5,7 @@ import { useDeliveryStore } from '@/store/deliveryStore';
 import { useConfirm } from 'primevue/useconfirm';
 import { useToastService } from '@/helpers/toast';
 import { useI18n } from 'vue-i18n';
+import { ref } from 'vue';
 // import { useI18n } from 'vue-i18n';
 
 defineProps({
@@ -45,9 +46,29 @@ const deleteDelivery = (delivery) => {
     }
   });
 };
+
+const grouped = ref(false);
+const loading = ref(false);
+const fetchDeliveries = async (event) => {
+  try {
+    loading.value = true;
+    if (event === true) {
+      await deliveryStore.fetchDeliveriesGrouped();
+    } else {
+      await deliveryStore.fetchDeliveries();
+    }
+  } finally {
+    loading.value = false;
+  }
+};
 </script>
+
 <template>
   <div class="card">
+    <div class="flex justify-content-end mb-3 align-items-center">
+      <div class="mr-2">{{ $t('delivery.grouped') }}</div>
+      <InputSwitch @input="fetchDeliveries" v-model="grouped" />
+    </div>
     <DataTable showGridlines scrollable scrollHeight="400px" :value="deliveries" tableStyle="min-width: 50rem">
       <Column style="width: 25%" field="user" :header="$t('user.name')">
         <template #body="{ data }">
@@ -57,14 +78,23 @@ const deleteDelivery = (delivery) => {
       <Column style="width: 15%" field="role" :header="$t('user.role')">
         <template #body="{ data }"> {{ $t(`roles.${data.user.role}`) }}</template>
       </Column>
-      <Column style="width: 15%" field="number" :header="$t('delivery.number')"></Column>
-      <Column style="width: 15%" field="date" :header="$t('delivery.date')">
-        <template #body="{ data }"> {{ dayjs(data.date).format('YYYY/MM') }}</template>
+      <Column v-if="!grouped" style="width: 15%" field="number" :header="$t('delivery.number')">
+        <template #body="{ data }"> {{ data.number || data.totalDeliveries }}</template>
       </Column>
-      <Column style="width: 15%" field="date" :header="$t('user.createdAt')">
-        <template #body="{ data }"> {{ dayjs(data.createdAt).format('YYYY/MM/DD') }}</template>
+      <Column v-else style="width: 15%" field="number" :header="$t('delivery.totalDeliveries')">
+        <template #body="{ data }"> {{ data.totalDeliveries }}</template>
       </Column>
-      <Column style="width: 25%" field="edit" headerClass="justify-content-center" :header="$t('delivery.edit')">
+      <Column v-if="!grouped" style="width: 15%" field="date" :header="$t('delivery.date')">
+        <template #body="{ data }">
+          {{ dayjs(data.date).format('YYYY/MM') }}
+        </template>
+      </Column>
+      <Column v-if="!grouped" style="width: 15%" field="date" :header="$t('user.createdAt')">
+        <template #body="{ data }">
+          {{ dayjs(data.createdAt).format('YYYY/MM/DD') }}
+        </template>
+      </Column>
+      <Column v-if="!grouped" style="width: 25%" field="edit" headerClass="justify-content-center" :header="$t('delivery.edit')">
         <template #body="{ data }">
           <div class="w-full flex justify-content-center">
             <Button raised class="flex align-items-center mr-2" @click="editDelivery(data)">
