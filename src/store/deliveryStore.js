@@ -1,22 +1,22 @@
 import { defineStore } from 'pinia';
 import { instance as api } from '../libs/axios';
 
-export const useEmployeeStore = defineStore('employees', {
+export const useDeliveryStore = defineStore('deliveries', {
   // state
   state: () => {
     return {
-      employees: [],
-      employeeToEdit: {}
+      deliveries: [],
+      deliveryToEdit: {}
     };
   },
 
   getters: {},
 
   actions: {
-    createEmployee(user) {
+    createDelivery(user) {
       return new Promise((resolve, reject) => {
         api
-          .post('/users', user)
+          .post('/deliveries', user)
           .then((response) => {
             resolve(response.data);
           })
@@ -25,10 +25,10 @@ export const useEmployeeStore = defineStore('employees', {
           });
       });
     },
-    editEmployee(user) {
+    editDelivery(user) {
       return new Promise((resolve, reject) => {
         api
-          .patch(`/users/${user.id}`, user)
+          .patch(`/deliveries/${user.id}`, user)
           .then((response) => {
             resolve(response.data);
           })
@@ -37,14 +37,12 @@ export const useEmployeeStore = defineStore('employees', {
           });
       });
     },
-    fetchEmployees(name) {
+    fetchDeliveries() {
       return new Promise((resolve, reject) => {
         api
-          .get('/users', {
-            params: { byName: name }
-          })
+          .get('/deliveries')
           .then((response) => {
-            this.employees = response.data;
+            this.deliveries = response.data;
             resolve(response.data);
           })
           .catch((err) => {

@@ -42,6 +42,7 @@
   "user": {
     "role": "Rol",
     "name": "Nombre",
+    "employee": "Empleado",
     "number": "Numero",
     "createUser": "Crear usuario",
     "createdAt": "Creado el",
@@ -49,6 +50,16 @@
     "employeeNumber": "Numero de empleado",
     "added": "Empleado Agregado",
     "edited": "Empleado editado",
+    "edit": "Editar empleado"
+  },
+  "delivery": {
+    "number": "Numero",
+    "createDelivery": "Crear entrega",
+    "createdAt": "Creado el",
+    "editDelivery": "Editar entrega",
+    "employeeNumber": "Numero de empleado",
+    "added": "Entrega Agregado",
+    "edited": "Entrega editado",
     "edit": "Editar empleado"
   },
   "sidebar": {

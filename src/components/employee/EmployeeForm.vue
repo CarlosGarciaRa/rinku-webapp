@@ -8,16 +8,7 @@ import { useToastService } from '@/helpers/toast';
 import { storeToRefs } from 'pinia';
 
 const props = defineProps({
-  user: {
-    id: String,
-    firstName: String,
-    lastName: String,
-    bio: String,
-    birthday: String,
-    profilePictureUrl: String,
-    programmingLanguages: Array,
-    skills: Array
-  }
+  user: { name: '', role: '' }
 });
 const userToSend = ref({ name: '', role: '' });
 

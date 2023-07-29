@@ -13,7 +13,7 @@ export default [
       {
         path: '/deliveries',
         name: 'deliveries',
-        component: () => import('@/views/pages/employee/Deliveries.vue')
+        component: () => import('@/views/pages/delivery/Deliveries.vue')
       }
     ]
   }
