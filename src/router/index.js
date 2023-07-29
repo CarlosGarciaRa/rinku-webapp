@@ -6,8 +6,9 @@ const router = createRouter({
   history: createWebHashHistory(),
   routes: [
     {
-      path: '/landing',
-      name: 'landing',
+      path: '/',
+      name: 'home',
+      redirect: '/employees',
       component: () => import('@/views/pages/Landing.vue')
     },
     ...routes,
