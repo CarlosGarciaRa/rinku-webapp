@@ -47,7 +47,9 @@
     "createdAt": "Creado el",
     "editUser": "Editar usuario",
     "employeeNumber": "Numero de empleado",
-    "added": "Empleado Agregado"
+    "added": "Empleado Agregado",
+    "edited": "Empleado editado",
+    "edit": "Editar empleado"
   },
   "sidebar": {
     "employees": "Empleados",
@@ -63,5 +65,6 @@
   },
   "hello": "Hola",
   "yes": "Sí",
-  "no": "No"
+  "no": "No",
+  "cancel": "Cancel"
 }

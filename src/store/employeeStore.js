@@ -5,7 +5,8 @@ export const useEmployeeStore = defineStore('employees', {
   // state
   state: () => {
     return {
-      employees: []
+      employees: [],
+      employeeToEdit: {}
     };
   },
 
@@ -16,6 +17,18 @@ export const useEmployeeStore = defineStore('employees', {
       return new Promise((resolve, reject) => {
         api
           .post('/users', user)
+          .then((response) => {
+            resolve(response.data);
+          })
+          .catch((err) => {
+            reject(err);
+          });
+      });
+    },
+    editEmployee(user) {
+      return new Promise((resolve, reject) => {
+        api
+          .patch(`/users/${user.id}`, user)
           .then((response) => {
             resolve(response.data);
           })

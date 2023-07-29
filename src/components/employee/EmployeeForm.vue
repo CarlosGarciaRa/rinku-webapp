@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n';
 import { useEmployeeStore } from '@/store/employeeStore';
 import { computed, ref, watch } from 'vue';
 import { useToastService } from '@/helpers/toast';
+import { storeToRefs } from 'pinia';
 
 const props = defineProps({
   user: {
@@ -16,11 +17,6 @@ const props = defineProps({
     profilePictureUrl: String,
     programmingLanguages: Array,
     skills: Array
-  },
-  isEdit: {
-    type: Boolean,
-    // Establece el valor predeterminado a false
-    default: false
   }
 });
 const userToSend = ref({ name: '', role: '' });
@@ -40,24 +36,42 @@ const roles = ref([
   { name: t('roles.auxiliares'), code: 'auxiliares' }
 ]);
 
+const isEdit = computed(() => {
+  if (userToSend.value.id) return true;
+  return false;
+});
+
 const employeeStore = useEmployeeStore();
 const { showToast } = useToastService();
+const { employeeToEdit } = storeToRefs(employeeStore);
 const loading = ref(false);
 const submit = async () => {
   try {
     loading.value = true;
     const isFormCorrect = await v$.value.$validate();
     if (!isFormCorrect) return;
-    await employeeStore.createEmployee(userToSend.value);
+    if (isEdit.value) {
+      await employeeStore.editEmployee(userToSend.value);
+      showToast({ severity: 'success', summary: 'OK', detail: t('user.edited'), life: 3000 });
+    } else {
+      await employeeStore.createEmployee(userToSend.value);
+      showToast({ severity: 'success', summary: 'OK', detail: t('user.added'), life: 3000 });
+    }
+    userToSend.value = { name: '', role: '' };
+    v$.value.$reset();
     await employeeStore.fetchEmployees();
-    showToast({ severity: 'success', summary: 'OK', detail: t('user.added'), life: 3000 });
   } finally {
     loading.value = false;
   }
 };
+
+const cancel = () => {
+  employeeToEdit.value = {};
+};
 watch(
   () => props.user,
   (val) => {
+    console.log(val);
     userToSend.value = { ...val };
   }
 );
@@ -80,10 +94,7 @@ watch(
               :class="{ 'p-invalid': v$.userToSend.name.$errors.length }"
             />
           </div>
-          <div v-if="props.isEdit" class="col-12 lg:col-6">
-            <label for="firstName" class="block text-900 text-xl font-medium mb-2">{{ $t('user.number') }}</label>
-            <InputText id="firstName" type="text" placeholder="" class="w-full" :value="userToSend.number" />
-          </div>
+
           <div class="col-12 lg:col-6">
             <label for="firstName" class="block text-900 text-xl font-medium mb-2">{{ $t('user.role') }}</label>
             <Dropdown
@@ -98,10 +109,17 @@ watch(
               :class="{ 'p-invalid': v$.userToSend.role.$errors.length }"
             />
           </div>
+          <div v-if="isEdit" class="col-12 lg:col-6">
+            <label for="firstName" class="block text-900 text-xl font-medium mb-2">{{ $t('user.number') }}</label>
+            <InputText disabled id="firstName" type="text" placeholder="" class="w-full" :value="userToSend.employeeNumber" />
+          </div>
         </div>
         <div class="flex justify-content-end">
+          <Button v-if="isEdit" raised class="flex align-items-center mr-1" severity="danger" :loading="loading" @click="cancel">
+            {{ $t('cancel') }}
+          </Button>
           <Button raised class="flex align-items-center" :loading="loading" @click="submit">
-            {{ props.iEdit ? $t('user.editUser') : $t('user.createUser') }}
+            {{ isEdit ? $t('user.editUser') : $t('user.createUser') }}
           </Button>
         </div>
       </div>

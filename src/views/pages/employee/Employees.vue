@@ -7,7 +7,7 @@ import { storeToRefs } from 'pinia';
 
 const loading = ref(false);
 const employeeStore = useEmployeeStore();
-const { employees } = storeToRefs(employeeStore);
+const { employees, employeeToEdit } = storeToRefs(employeeStore);
 
 onBeforeMount(async () => {
   loading.value = true;
@@ -25,7 +25,7 @@ onBeforeMount(async () => {
 
     <div class="grid mt-2 justify-content-center">
       <div class="col-12 md:col-10 lg:col-9 flex-order-1 md:flex-order-0">
-        <EmployeeForm></EmployeeForm>
+        <EmployeeForm :user="employeeToEdit"></EmployeeForm>
       </div>
       <div class="col-12 flex-order-0 md:flex-order-1 overflow-container-profile">
         <EmployeesTable :employees="employees"></EmployeesTable>

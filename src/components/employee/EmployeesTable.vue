@@ -1,5 +1,7 @@
 <script setup>
 import dayjs from 'dayjs';
+import { storeToRefs } from 'pinia';
+import { useEmployeeStore } from '@/store/employeeStore';
 // import { useI18n } from 'vue-i18n';
 
 defineProps({
@@ -16,6 +18,11 @@ defineProps({
 //   { field: 'role', header: t('user.role') },
 //   { field: 'createdAt', header: t('user.createdAt') }
 // ];
+const employeeStore = useEmployeeStore();
+const { employeeToEdit } = storeToRefs(employeeStore);
+const editUser = (employee) => {
+  employeeToEdit.value = { ...employee };
+};
 </script>
 <template>
   <div class="card">
@@ -27,6 +34,15 @@ defineProps({
       </Column>
       <Column style="width: 25%" field="createdAt" :header="$t('user.createdAt')">
         <template #body="{ data }"> {{ dayjs(data.createdAt).format('YYYY/MM/DD') }}</template>
+      </Column>
+      <Column style="width: 25%" field="edit" headerClass="justify-content-center" :header="$t('user.edit')">
+        <template #body="{ data }">
+          <div class="w-full flex justify-content-center">
+            <Button raised class="flex align-items-center" @click="editUser(data)">
+              <i class="pi pi-user-edit" style="color: #fff"></i>
+            </Button>
+          </div>
+        </template>
       </Column>
     </DataTable>
   </div>
