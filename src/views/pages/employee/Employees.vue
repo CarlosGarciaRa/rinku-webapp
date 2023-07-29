@@ -24,10 +24,10 @@ onBeforeMount(async () => {
     <loading-overlay :loading="loading"></loading-overlay>
     <h2>{{ $t('sidebar.employees') }}</h2>
     <div class="grid mt-2 justify-content-center">
-      <div class="col-12 md:col-10 lg:col-9 flex-order-1 md:flex-order-0">
+      <div class="col-12 md:col-10 lg:col-9">
         <EmployeeForm :user="employeeToEdit"></EmployeeForm>
       </div>
-      <div class="col-12 flex-order-0 md:flex-order-1 overflow-container-profile">
+      <div class="col-12 overflow-container-profile">
         <EmployeesTable :employees="employees"></EmployeesTable>
       </div>
     </div>
